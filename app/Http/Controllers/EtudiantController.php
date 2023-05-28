@@ -28,8 +28,9 @@ class EtudiantController extends Controller
     public function create()
     {
         $villes = \App\Models\Ville::all();
-        return view('etudiants.create', compact('villes'));
+        return view('etudiants.create', ['villes' => $villes]);
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -60,9 +61,10 @@ class EtudiantController extends Controller
      */
     public function show($id)
     {
-        $etudiant = Etudiant::findOrFail($id);
-        return view('etudiants.show', compact('etudiant'));
+        $etudiant = Etudiant::find($id);
+        return view('etudiants.show', ['etudiant' => $etudiant]);
     }
+
     
 
     /**
@@ -74,8 +76,9 @@ class EtudiantController extends Controller
     public function edit(Etudiant $etudiant)
     {
         $villes = \App\Models\Ville::all();
-        return view('etudiants.edit', compact('etudiant', 'villes'));
+        return view('etudiants.edit', ['etudiant' => $etudiant, 'villes' => $villes]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -89,7 +92,9 @@ class EtudiantController extends Controller
         // Valider les données du formulaire
         $validatedData = $request->validate([
             'nom' => 'required',
-            // Ajoutez les autres règles de validation pour les autres champs ici
+            'adresse' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
         ]);
 
         // Mettre à jour les attributs de l'étudiant avec les nouvelles valeurs en utilisant la méthode update()

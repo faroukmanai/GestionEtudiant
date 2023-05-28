@@ -22,7 +22,6 @@
                     <td>{{ $etudiant->nom }}</td>
                     <td>{{ $etudiant->email }}</td>
                     <td>{{ $etudiant->phone }}</td>
-                    <!-- <td>{{ $etudiant->adresse }}</td> -->
                     <td>
                         <a href="{{ route('etudiants.edit', $etudiant->id) }}">Modifier</a>
                         <form method="POST" action="{{ route('etudiants.destroy', $etudiant->id) }}" class="d-inline">

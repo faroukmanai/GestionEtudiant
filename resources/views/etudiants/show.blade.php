@@ -12,7 +12,6 @@
                 Adresse: {{ $etudiant->adresse }}<br>
                 Téléphone: {{ $etudiant->phone }}<br>
                 Date de Naissance: {{ $etudiant->date_de_naissance }}<br>
-                
             </p>
             <a href="{{ route('etudiants.index') }}" class="card-link">Retour</a>
         </div>
