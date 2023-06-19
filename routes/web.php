@@ -32,8 +32,8 @@ Route::put('/etudiants/{etudiant}', [EtudiantController::class, 'update'])->name
 Route::delete('/etudiants/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiants.destroy');
 
 //login
-Route::get('registration', [CustomAuthController::class, 'create'])->name('registration');
-Route::post('registration', [CustomAuthController::class, 'store'])->name('user.store');
+Route::get('registration', [CustomAuthController::class, 'create'])->name('registration')->middleware('auth');
+Route::post('registration', [CustomAuthController::class, 'store'])->name('user.store')->middleware('auth');
 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('login', [CustomAuthController::class, 'authentification'])->name('login.authentification');
@@ -47,11 +47,11 @@ Route::get('/articles', [ArticleController::class, 'index'])->name('articles.ind
 Route::middleware('auth')->group(function () {
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
 });
-Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
-Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
-Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
-Route::put('/articles/{article}', [ArticleController::class, 'update'])->name('articles.update');
-Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store')->middleware('auth');
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show')->middleware('auth');
+Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->name('articles.edit')->middleware('auth');
+Route::put('/articles/{article}', [ArticleController::class, 'update'])->name('articles.update')->middleware('auth');
+Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy')->middleware('auth');
 
 //PDF
 Route::get('/articles/{article}/PDF', [ArticleController::class, 'showPdf'])->name('showPdf');
