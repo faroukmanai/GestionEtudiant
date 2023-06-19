@@ -3,15 +3,18 @@
 @section('titleHeader', 'Liste des étudiants')
 @section('content')
 <div class="container">
-<h3><a href="{{ route('etudiants.create') }}">Ajouter un étudiant</a></h3>
-   <table class="table table-striped">
+    <div>
+        <p class="mt-5">Cliquez sur ce bouton si vous voulez ajouter un étudiant</p>
+        <a href="{{ route('etudiants.create') }}" class="btn btn-warning ">Ajouter</a>
+    </div>
+
+   <table class="table text-white mt-5">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nom</th>
                 <th>Email</th>
                 <th>Télephone</th>
-                <!-- <th>adresse</th> -->
                 <th>Actions</th>
             </tr>
         </thead>
@@ -23,7 +26,7 @@
                     <td>{{ $etudiant->email }}</td>
                     <td>{{ $etudiant->phone }}</td>
                     <td>
-                        <a href="{{ route('etudiants.edit', $etudiant->id) }}">Modifier</a>
+                        <a href="{{ route('etudiants.edit', $etudiant->id) }}" class="text-warning">Modifier</a>
                         <form method="POST" action="{{ route('etudiants.destroy', $etudiant->id) }}" class="d-inline">
                             @csrf
                             @method('DELETE')

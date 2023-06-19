@@ -3,7 +3,7 @@
 @section('titleHeader', "Les informations d'un étudiant")
 @section('content')
 
-<div class="container">
+<div class="container mt-5 d-flex justify-content-center">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{ $etudiant->nom }}</h5>
@@ -13,7 +13,7 @@
                 Téléphone: {{ $etudiant->phone }}<br>
                 Date de Naissance: {{ $etudiant->date_de_naissance }}<br>
             </p>
-            <a href="{{ route('etudiants.index') }}" class="card-link">Retour</a>
+            <a href="{{ route('login') }}" class="text-black fw-bold">Retour</a>
         </div>
     </div>
 </div>

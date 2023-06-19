@@ -13,5 +13,11 @@ class Etudiant extends Model
                             'phone', 
                             'email', 
                             'date_de_naissance',
-                             'ville_id'];
+                             'ville_id',
+                             'user_id'];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

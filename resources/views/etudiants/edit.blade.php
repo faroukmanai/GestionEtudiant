@@ -31,7 +31,7 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary mt-5">Mettre à jour</button>
+        <button type="submit" class="btn btn-warning mt-5">Mettre à jour</button>
         <a href="{{ route('etudiants.index') }}" class="btn btn-danger mt-5">Retour</a>
     </form>
 </div>

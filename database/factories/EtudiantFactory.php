@@ -28,6 +28,8 @@ class EtudiantFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'date_de_naissance' => $this->faker->date(),
             'ville_id' => \App\Models\Ville::all()->random()->id,
+            'user_id' => \App\Models\User::factory(), // Crée un nouvel utilisateur pour chaque étudiant
+
         ];
     }
 }
