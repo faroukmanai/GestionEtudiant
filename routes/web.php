@@ -32,8 +32,8 @@ Route::put('/etudiants/{etudiant}', [EtudiantController::class, 'update'])->name
 Route::delete('/etudiants/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiants.destroy');
 
 //login
-Route::get('registration', [CustomAuthController::class, 'create'])->name('registration')->middleware('auth');
-Route::post('registration', [CustomAuthController::class, 'store'])->name('user.store')->middleware('auth');
+Route::get('registration', [CustomAuthController::class, 'create'])->name('registration');
+Route::post('registration', [CustomAuthController::class, 'store'])->name('user.store');
 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('login', [CustomAuthController::class, 'authentification'])->name('login.authentification');
