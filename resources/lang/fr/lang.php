@@ -19,6 +19,7 @@ return [
     'text_save' => 'Sauvegarder',
     'text_view' => 'Voir article',
     'text_written_by' => 'Écrit par',
+    'text_edit' => 'Modifier',
  //auth.forgot
     'text_forgot_password'=> 'Mot de passe oublié',
     'text_send' => 'Envoyer'

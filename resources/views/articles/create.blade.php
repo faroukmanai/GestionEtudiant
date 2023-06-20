@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', trans('lang.text_create'))
 @section('content')
     <div class="container">
         <h1>@lang('lang.text_create')</h1>

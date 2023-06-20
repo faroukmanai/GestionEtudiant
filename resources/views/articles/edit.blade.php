@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Modifier l\'article')
+@section('title', trans('lang.text_edit'))
 
 @section('content')
     <div class="container">
-        <h1>Modifier l'article</h1>
+        <h1>@lang('lang.text_edit')</h1>
         <form action="{{ route('articles.update', $article->id) }}" method="POST">
             @csrf
             @method('PUT')

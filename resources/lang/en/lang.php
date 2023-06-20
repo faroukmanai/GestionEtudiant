@@ -20,11 +20,13 @@ return [
     'text_save' => 'Save',
     'text_view' => 'View article',
     'text_written_by' => 'Author',
+    'text_edit' => 'Edit',
     //auth.forgot
     'text_forgot_password'=> 'Forgot Password',
     'text_send' => 'Send',
     //auth.forgot
     'text_new_password'=> 'New Password',
     'text_confirm_password'=> 'Confirm Password',
+
 
 ];
